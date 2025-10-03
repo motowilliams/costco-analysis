@@ -2,7 +2,9 @@
 
 This project contains scripts to fetch and analyze Costco receipt data using the Costco API. Note that you need to log in to costco.com manually and look at the network requests to get the bearer token, the client ID, and the client identifier.
 
-🐳 **Docker Support**: This project now includes full Docker support with data persistence. See [DOCKER_README.md](DOCKER_README.md) for detailed Docker setup and usage instructions.
+🐳 **Docker Support**: This project now includes full Docker support with data persistence. 
+- 🚀 New here? Check [QUICKSTART.md](QUICKSTART.md) for a 5-minute setup guide
+- 📖 For detailed Docker documentation, see [DOCKER_README.md](DOCKER_README.md)
 
 ## Setup
 
