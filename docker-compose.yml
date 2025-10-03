@@ -1,0 +1,22 @@
+services:
+  costco-analysis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: costco-analysis
+    volumes:
+      # Mount data directory for persistence
+      - ./data:/app/data
+      # Mount .env file for environment variables
+      - ./.env:/app/.env:ro
+      # Mount output CSV file
+      - ./costco-items.csv:/app/costco-items.csv
+    environment:
+      # Environment variables can be overridden from .env file
+      - COSTCO_BEARER_TOKEN=${COSTCO_BEARER_TOKEN}
+      - COSTCO_CLIENT_ID=${COSTCO_CLIENT_ID}
+      - COSTCO_CLIENT_IDENTIFIER=${COSTCO_CLIENT_IDENTIFIER}
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: /bin/bash
